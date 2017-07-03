@@ -106,9 +106,13 @@ My final model results were:
 * validation set accuracy of 94.8
 * test set accuracy of 93.5
 
-My model is based on the LeNet architecture that was suggested in the course material.  The architecture
-worked pretty well out of the gate.  I added dropout layers to prevent overfitting.  With dropout layers
-I was able to train for more epochs and get a better validation accuracy result.
+My initial model was based on the LeNet architecture that was suggested in the course material.  
+The architecture worked pretty well out of the gate.  I was able to get 92% accuracy on the
+validation set right away.  To improve performance I added to dropout layers, one between each
+fully connected layer.  The dropout layers reduced overfitting and improved the validation
+accuracy to the 94-96% range.  Most of the hyperparameters worked pretty well the values
+recommended in course lectures.  I played around with the learning rate, dropout rate, and the
+loss function but ended up getting the best performance with the course recommended values.
 
 ###Test a Model on New Images
 
@@ -129,10 +133,14 @@ Here are the results of the prediction:
 
 ![Predictions](prediction.png)
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.  Furthermore,
-the less confident guesses tend to resemble the ground truth.  With the exception of the blue round about sign,
-all of the general caution guesses (4th row of figure) look very similar to the general caution sign.  This is
-a good sign because it means that the model has learned a good, human-like representation of traffic signs.
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.  
+This is even better accuracy than was achieved on the test (93%) and validation (94%) sets.  If more
+images were added to the newly acquired dataset, it likely would have converged to an accuracy similar
+to the test set.  However, this still means that our model is generalizing well to new images.
+Furthermore, the less confident guesses tend to resemble the ground truth.  With the exception of the blue
+round about sign, all of the general caution guesses (4th row of figure) look very similar to the general
+caution sign.  This is a good sign because it means that the model has learned a good, human-like
+representation of traffic signs.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
