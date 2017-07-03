@@ -137,31 +137,30 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 This is even better accuracy than was achieved on the test (93%) and validation (94%) sets.  If more
 images were added to the newly acquired dataset, it likely would have converged to an accuracy similar
 to the test set.  However, this still means that our model is generalizing well to new images.
-Furthermore, the less confident guesses tend to resemble the ground truth.  With the exception of the blue
-round about sign, all of the general caution guesses (4th row of figure) look very similar to the general
-caution sign.  This is a good sign because it means that the model has learned a good, human-like
+Furthermore, the less confident guesses tend to resemble the ground truth.  
+This is a good sign because it means that the model has learned a good, human-like
 representation of traffic signs.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 12th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a 30km/h sign (probability of 0.4).
-Furthermore all of the predictions were speed limit signs, which is quite reassuring.  
-However, the model seemed a bit thrown by the 70km/h sign.  This is surprising considering how well it did with the
-30 km/h sign.  It only guessed the 2nd sign with 7% confidence which is quite low, and it's 3rd and 4th guesses
-were not even speed limit signs.  I'm not sure why it was able to learn the 30km/h sign so much better than the 70km/h
-sign.  It doesn't make sense.
+The model is certain of all of its predictions.  I find this a bit surprising
+because I occasionally run the notebook and get an incorrect prediction for the 70 km/h sign.
+All of the predictions for the first sign were speed limit signs, which is quite reassuring.  
+However, the model seems a bit thrown by the 70km/h sign.  You can't tell from this kernel output,
+but I have seen the model incorrectly classify the 70 km/h sign as a 30 km/h sign.
+30 km/h sign. Furthermore, it's 3rd and 4th guesses were not even speed limit signs.  
 
-The model did well on the other 3 signs.  It was always at least 300% more confident of the correct sign than its next best guess.
+The model did well on the other 3 signs.  It is eerily confident of its predictions.
 
 | Probability         	|     Prediction	        					| Ground truth |
 |:---------------------:|:---------------------------------------------:|:------------------:|
-| .40         			| Speed limit (30km/h)   									| Speed limit (30km/h)  |
-| .07     				| Speed limit (70km/h)   | Speed limit (70km/h) |
-| .27					| No entry | No entry |
-| .39	      			| General caution | General caution |
-| .44				    | Road work | Road work |
+| 1.0         			| Speed limit (30km/h)   									| Speed limit (30km/h)  |
+| 1.0     				| Speed limit (70km/h)   | Speed limit (70km/h) |
+| 1.0					| No entry | No entry |
+| 1.0	      			| General caution | General caution |
+| 1.0				    | Road work | Road work |
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
